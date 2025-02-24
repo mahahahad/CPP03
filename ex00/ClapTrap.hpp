@@ -9,7 +9,7 @@
 #define YELLOW "\033[33m"
 #define RESET "\033[0m"
 
-class ClapTrap {
+class   ClapTrap {
     public:
         ClapTrap( std::string name );
         ClapTrap( const ClapTrap& copy );
@@ -19,7 +19,7 @@ class ClapTrap {
         void        takeDamage( unsigned int amount );
         void        beRepaired( unsigned int amount );
         // Util function for dislaying stats
-        void        displayStats( std::string stat = "all");
+        void        displayStats( std::string stat = "all" );
     private:
         ClapTrap();
         std::string name;
