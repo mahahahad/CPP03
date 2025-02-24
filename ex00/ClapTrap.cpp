@@ -6,7 +6,7 @@ ClapTrap::ClapTrap(std::string name): name(name) {
     hitPoints = 10;
     energyPoints = 10;
     attackDamage = 0;
-    std::cout << name << " has been constructed!" << std::endl;
+    std::cout << "ClapTrap " << name << " has been constructed!" << std::endl;
 }
 
 // Copy constructor
@@ -15,7 +15,7 @@ ClapTrap::ClapTrap(const ClapTrap& copy) {
     hitPoints = copy.hitPoints;
     energyPoints = copy.energyPoints;
     attackDamage = copy.attackDamage;
-    std::cout << name
+    std::cout << "ClapTrap " << name
         << " has been copied with the copy constructor!"
         << std::endl;
 }
@@ -28,7 +28,7 @@ ClapTrap&   ClapTrap::operator=(const ClapTrap& copy) {
         energyPoints = copy.energyPoints;
         attackDamage = copy.attackDamage;
     }
-    std::cout << name
+    std::cout << "ClapTrap " << name
         << " has been copied with the copy assignment operator!"
         << std::endl;
     return (*this);
@@ -36,7 +36,7 @@ ClapTrap&   ClapTrap::operator=(const ClapTrap& copy) {
 
 // Destructor
 ClapTrap::~ClapTrap() {
-    std::cout << name << " has destructed." << std::endl;
+    std::cout << "ClapTrap " << name << " has destructed." << std::endl;
 }
 
 /* Member Functions */
