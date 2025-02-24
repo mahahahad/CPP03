@@ -6,7 +6,8 @@ ClapTrap::ClapTrap(std::string name): name(name) {
     hitPoints = 10;
     energyPoints = 10;
     attackDamage = 0;
-    std::cout << "ClapTrap " << name << " has been constructed!" << std::endl;
+    std::cout << "ClapTrap " << BLUE << name << RESET
+        << " has been constructed!" << std::endl;
 }
 
 // Copy constructor
@@ -15,7 +16,7 @@ ClapTrap::ClapTrap(const ClapTrap& copy) {
     hitPoints = copy.hitPoints;
     energyPoints = copy.energyPoints;
     attackDamage = copy.attackDamage;
-    std::cout << "ClapTrap " << name
+    std::cout << "ClapTrap " << BLUE << name << RESET 
         << " has been copied with the copy constructor!"
         << std::endl;
 }
@@ -28,7 +29,7 @@ ClapTrap&   ClapTrap::operator=(const ClapTrap& copy) {
         energyPoints = copy.energyPoints;
         attackDamage = copy.attackDamage;
     }
-    std::cout << "ClapTrap " << name
+    std::cout << "ClapTrap " << BLUE << name << RESET 
         << " has been copied with the copy assignment operator!"
         << std::endl;
     return (*this);
@@ -36,14 +37,15 @@ ClapTrap&   ClapTrap::operator=(const ClapTrap& copy) {
 
 // Destructor
 ClapTrap::~ClapTrap() {
-    std::cout << "ClapTrap " << name << " has destructed." << std::endl;
+    std::cout << "ClapTrap " << BLUE << name << RESET 
+        << " has destructed." << std::endl;
 }
 
 /* Member Functions */
 
 void    ClapTrap::attack(const std::string& target) {
     energyPoints -= 1;
-    std::cout << "ClapTrap " << name
+    std::cout << "ClapTrap " << BLUE << name << RESET
         << RED " attacks " << target << RESET ", causing "
         << RED << attackDamage << " points of damage!" RESET
         << std::endl;
@@ -51,7 +53,7 @@ void    ClapTrap::attack(const std::string& target) {
 
 void    ClapTrap::takeDamage(unsigned int amount) {
     hitPoints -= amount;
-    std::cout << name
+    std::cout << "ClapTrap " << BLUE << name << RESET
         << RED " took " << amount << " points of damage!" RESET
         << std::endl;
 }
@@ -59,7 +61,7 @@ void    ClapTrap::takeDamage(unsigned int amount) {
 void    ClapTrap::beRepaired(unsigned int amount) {
     hitPoints += amount;
     energyPoints -= 1;
-    std::cout << name
+    std::cout << "ClapTrap " << BLUE << name << RESET
         << GREEN " repaired itself by " << amount << " points." RESET
         << std::endl;
 }
