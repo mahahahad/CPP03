@@ -52,6 +52,12 @@ void    ClapTrap::attack(const std::string& target) {
 }
 
 void    ClapTrap::takeDamage(unsigned int amount) {
+    if (hitPoints <= 0) {
+        std::cout << "ClapTrap " << BLUE << name << RESET
+            << RED " is already dead and cannot take more damage! " RESET
+            << std::endl;
+        return ;
+    }
     hitPoints -= amount;
     std::cout << "ClapTrap " << BLUE << name << RESET
         << RED " took " << amount << " points of damage!" RESET

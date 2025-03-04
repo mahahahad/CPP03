@@ -7,7 +7,8 @@ int main(void) {
 
     // testCopyAssignment = testCopy;
     test.attack("FlapTrap");
-    test.takeDamage(10);
+    test.takeDamage(100);
+    test.takeDamage(100);
     test.guardGate();
     test.displayStats();
     // testCopy.displayStats();

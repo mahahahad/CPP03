@@ -35,6 +35,35 @@ FragTrap::~FragTrap() {
         << " has destructed." << std::endl;
 }
 
+void    FragTrap::attack(const std::string& target) {
+    energyPoints -= 1;
+    std::cout << "FragTrap " << BLUE << name << RESET
+        << RED " attacks " << target << RESET ", causing "
+        << RED << attackDamage << " points of damage!" RESET
+        << std::endl;
+}
+
+void    FragTrap::takeDamage(unsigned int amount) {
+    if (hitPoints <= 0) {
+        std::cout << "FragTrap " << BLUE << name << RESET
+            << RED " is already dead and cannot take more damage! " RESET
+            << std::endl;
+        return ;
+    }
+    hitPoints -= amount;
+    std::cout << "FragTrap " << BLUE << name << RESET
+        << RED " took " << amount << " points of damage!" RESET
+        << std::endl;
+}
+
+void    FragTrap::beRepaired(unsigned int amount) {
+    hitPoints += amount;
+    energyPoints -= 1;
+    std::cout << "FragTrap " << BLUE << name << RESET
+        << GREEN " repaired itself by " << amount << " points." RESET
+        << std::endl;
+}
+
 void    FragTrap::highFivesGuys(void) {
     std::cout << "FragTrap " << BLUE << name << RESET
         << " called the highFivesGuys member function." << std::endl;
